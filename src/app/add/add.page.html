@@ -6,21 +6,20 @@
 
 <ion-content class="ion-padding" [fullscreen]="true">
   <ion-card>
-<ion-card-header>
-  <ion-card-title>New State</ion-card-title>
-  <ion-card-subtitle>Enter new state</ion-card-subtitle>
-</ion-card-header>
+    <ion-card-header>
+      <ion-card-title>New State</ion-card-title>
+      <ion-card-subtitle>Enter new state</ion-card-subtitle>
+    </ion-card-header>
 
-<ion-item>
-  <ion-input label="&nbsp;&nbsp;&nbsp;&nbsp;id" placeholder="Enter id" [(ngModel)]="id"></ion-input>
-</ion-item>
-<ion-item>
-  <ion-input label="&nbsp;&nbsp;Name" placeholder="Enter student name" [(ngModel)]="name"></ion-input>
-</ion-item>
-<ion-buttons slot="end">
-  <ion-back-button defaultHref="home"></ion-back-button>
-</ion-buttons>
-<ion-button fill="clear" (click)="addState()">Add</ion-button>
-</ion-card>
+    <ion-item>
+      <!-- Use ion-input to capture the state name -->
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input type="text" placeholder="Enter State name" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="addState()">Add</ion-button>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-card>
 </ion-content>
-

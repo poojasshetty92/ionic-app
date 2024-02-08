@@ -3,30 +3,26 @@
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-header>
+
 <ion-content class="ion-padding" [fullscreen]="true">
   <ion-list>
     <ion-list-header>
       States
     </ion-list-header>
   
-  <ion-item *ngFor="let state of stateList">
-    <ion-list>
-      <h2>{{state.id}}</h2>
-      <h4><b>{{state.Name}}</b></h4>
-    </ion-list>
-    <div style="position: absolute; right: 0px; bottom: 0px; ">
-      <ion-button fill="clear" (click)="view(state.id)">View</ion-button>
-    </div>
-  </ion-item>
+    <ion-item *ngFor="let state of stateList">
+      <ion-label>
+        <!-- Display the state name instead of ID -->
+        <h2>{{ state.name }}</h2>
+        <!--<h4><b>{{ state.id }}</b></h4>-->
+      </ion-label>
+      <ion-button slot="end" fill="clear" (click)="view(state.id)">View</ion-button>
+    </ion-item>
+  </ion-list>
 
-  <ion-item></ion-item>
-
-  <ion-fab slot="fixed" vertical="bottom" horizontal="center" >
-    <ion-fab-button (click)="add()">
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center" (click)="add()">
+    <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-</ion-list>
 </ion-content>
-</ion-header>
