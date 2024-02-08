@@ -16,7 +16,12 @@
     <ion-item>
       <ion-input label="State" placeholder="Enter new State details" [(ngModel)]="state"></ion-input>
     </ion-item>
-
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home"></ion-back-button>
+  </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="home"></ion-back-button>
+  </ion-buttons>
     <ion-button fill="clear" (click)="updateState()">Update</ion-button>
   </ion-card>
 </ion-content>

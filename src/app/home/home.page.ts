@@ -21,7 +21,7 @@ stateList: any;
   }
 
   view(id: any) {
-    this.router.navigate(['view', {id: id}]);
+    this.router.navigate(['view', {id: id }]);
   }
 
   add() {

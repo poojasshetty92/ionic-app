@@ -17,7 +17,7 @@ export class StateService {
 
   getState(USN: any) {
     return new Promise(resolve => {
-      this.http.get(this.apiBaseUrl+'states/'+id).subscribe(data => {
+      this.http.get(this.apiBaseUrl + 'states/' + identity).subscribe((data) => {
         resolve(data);
       })
     });
@@ -41,7 +41,7 @@ export class StateService {
 
   updateState(USN: any, state: any) {
     return new Promise(resolve => {
-      this.http.put(this.apiBaseUrl+'states/'+id, state).subscribe(data => {
+      this.http.put(this.apiBaseUrl+'states/'+identity, state).subscribe(data => {
         resolve(data);
       })
     });
