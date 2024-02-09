@@ -9,33 +9,31 @@ import { StateService } from '../state.service';
 })
 export class ViewPage implements OnInit {
 
-  id: any='';
-  name: any='';
+  id: any = '';
+  name: any = '';
   state: any;
-
 
   constructor(private router: Router, private route: ActivatedRoute, private stateService: StateService) {
     this.id = this.route.snapshot.params['id'];
     this.getState(this.id);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getState(id: any) {
     this.stateService.getState(id).then(data => {
-      this.state=data;
-      this.name=this.state.Name;
-      this.state=this.state.Course;
+      this.state = data;
+      this.name = this.state.Name;
+      this.state = this.state.Course;
     });
   }
 
   update() {
-    this.router.navigate(['update', {is: this.id, Name: this.name, State: this.state}]);
+    this.router.navigate(['update', { id: this.id, Name: this.name, State: this.state }]);
   }
 
   delete() {
-    if(confirm("Are you sure you want to delete student from database?")) {
+    if (confirm("Are you sure you want to delete State from the database?")) {
       this.stateService.deleteState(this.id);
     }
     this.router.navigate(['home']);

@@ -1,22 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>State <br> Update</ion-title>
+    <ion-title>State Update</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" [fullscreen]="true">
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{ id }}</ion-card-title>
-      <ion-card-subtitle>{{ name }}</ion-card-subtitle>
+      <ion-card-subtitle *ngIf="name">{{ name }}</ion-card-subtitle>
     </ion-card-header>
 
-    <ion-item>
-      <ion-label position="floating">State</ion-label>
-      <ion-input type="text" placeholder="Enter new State details" [(ngModel)]="state"></ion-input>
-    </ion-item>
-
     <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">New State</ion-label>
+        <ion-input type="text" placeholder="Enter new State details" [(ngModel)]="state"></ion-input>
+      </ion-item>
+
       <ion-button expand="block" (click)="updateState()">Update</ion-button>
     </ion-card-content>
   </ion-card>
