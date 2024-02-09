@@ -35,13 +35,14 @@ getState(USN: any) {
     });
   }
 
-  updateState(USN: any, state: any) {
+  updateState(stateData: any) {
     return new Promise(resolve => {
-      this.http.put(this.apiBaseUrl + 'states/' + USN, state).subscribe(data => {
+      this.http.put(this.apiBaseUrl + 'states/', stateData).subscribe(data => {
         resolve(data);
       });
     });
   }
+  
 
   deleteState(USN: any) {
     return new Promise(resolve => {
