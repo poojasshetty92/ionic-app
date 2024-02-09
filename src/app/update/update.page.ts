@@ -21,7 +21,7 @@ export class UpdatePage implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params['id'];
-      this.name = params['Name'] || ''; // Initialize name to empty string if it's undefined
+      this.name = params['Name'] || ''; // Initialize name to an empty string if it's undefined
       console.log('ID:', this.id); // Log the ID to verify it's being retrieved correctly
     });
   }
